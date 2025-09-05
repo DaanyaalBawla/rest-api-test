@@ -1,0 +1,25 @@
+{
+  "name": "rest-api-test",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/DaanyaalBawla/rest-api-test#readme",
+  "bugs": {
+    "url": "https://github.com/DaanyaalBawla/rest-api-test/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaanyaalBawla/rest-api-test.git"
+  },
+  "license": "ISC",
+  "author": "Daanyaal Bawla",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^21.4.3",
+    "hapi": "^18.1.0"
+  }
+}
