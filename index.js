@@ -19,22 +19,7 @@ const init = async () => {
         host: 'localhost'
     });
 
-    routes({
-        method: 'GET',
-        path: '/',
-        handler: (request, h) => {
-            const query1 = request.query.string || 'no string';
-            return `some text ${query1}`;
-        }
-    });
-    routes({
-        method: 'POST',
-        path: '/',
-        handler: (request,h) => {
-            return request.payload;
-        }
-    })
-   routes.route()
+    server.route(routes)
     await server.start();
     console.log('Server running on %s', server.info.uri);
     const responseget = await fetch("http://localhost:3001", {});
