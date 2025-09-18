@@ -3,9 +3,9 @@ const Joi = require('@hapi/joi')
 module.exports = [
     server.route({
         method: 'GET',
-        path: '/courses/{subject}',
+        path: '/gened/{gened_category_code}',
         handler: function (request, h) {
-        return `${request.params.subject}`;
+        return `${request.params.gened_category_code}`;
         }
 
     })
