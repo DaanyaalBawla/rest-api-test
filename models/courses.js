@@ -4,10 +4,12 @@ const path = require('path')
 class Courses {
     coursePath = path.join(__dirname,'courses.json')
     async find(criteria) {
-       function criteria(c) = 
+       function criteria(c, empty = True) {
+        
+       }
         const courseRead = await fsProm.readFile('coursePath');
         const parseCourse = JSON.parse(courseRead)
-        const filteredArr = parseCourse.filter(criteria)
+        const filteredArr = parseCourse.filter(criteria())
     }
     
 } 
