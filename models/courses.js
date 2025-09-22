@@ -1,15 +1,14 @@
-const { readFile } = require('fs')
-const fsProm = require('fs.promises')
+const { readFile } = require('node:fs');
+const fs = require('fs')
 const path = require('path')
 class Courses {
     coursePath = path.join(__dirname,'courses.json')
     async find(criteria) {
-       function criteria(c, empty = True) {
+         (criteria) => {return true}
         
-       }
         const courseRead = await fsProm.readFile('coursePath');
         const parseCourse = JSON.parse(courseRead)
-        const filteredArr = parseCourse.filter(criteria())
+        const filteredArr = parseCourse.filter(criteria)
     }
     
 } 
