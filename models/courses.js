@@ -6,7 +6,7 @@ class Courses {
     async find(criteria) {
          (criteria) => {return true}
         
-        const courseRead = await fsProm.readFile('coursePath');
+        const courseRead = await fsProm.readFile(coursePath);
         const parseCourse = JSON.parse(courseRead)
         const filteredArr = parseCourse.filter(criteria)
     }

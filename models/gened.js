@@ -1,13 +1,15 @@
-const { readFile } = require('fs')
-const fsProm = require('fs.promises')
+const { readFile } = require('node:fs');
+const fs = require('fs')
 const path = require('path')
 class Geneds {
-    async find(criteria) {
-        genedRead = await fsProm.readFile('genedPath');
-        parseCourse = JSON.parse(genedRead)
-
-    }
     genedPath = path.join(__dirname,'gened.json')
+    async find(criteria) {
+         (criteria) => {return true}
+        
+        const genedRead = await fsProm.readFile(this.genedPath);
+        const parseGened = JSON.parse(genedRead)
+        const filteredArr = parseGened.filter(criteria)
+    }
     
 } 
-module.exports = new Courses
+module.exports = new Geneds
