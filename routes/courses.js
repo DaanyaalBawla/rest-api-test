@@ -7,7 +7,6 @@ module.exports = [
         handler: function (request, h) {
         return `${request.params.subject}`;
         }
-
     })
 
 ]
