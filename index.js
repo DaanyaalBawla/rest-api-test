@@ -7,7 +7,6 @@ const fs = require('fs')
 const routes = []
 const routesPath = path.join(__dirname,'routes')
 const fileNames = fs.readdirSync(routesPath)
-const fullRoutesPath = path.join(routesPath, fileNames)
 fileNames.forEach(fileName => {
     routes.push(...require(path.join(routesPath, fileName)))
 })
@@ -39,5 +38,20 @@ process.on('unhandledRejection', (err) => {
     console.log(err);
     process.exit(1);
 });
+const { Client } = require("pg");
+
+const client = new Client("postgresql://temp:FNukzJzpun9cZ4t734m_qA@vague-mayfly-9420.jxf.gcp-us-east1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full");
+
+(async () => {
+  await client.connect();
+  try {
+    const results = await client.query("SELECT NOW()");
+    console.log(results);
+  } catch (err) {
+    console.error("error executing query:", err);
+  } finally {
+    client.end();
+  }
+})();
 
 init();
