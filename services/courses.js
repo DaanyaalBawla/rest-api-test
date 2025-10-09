@@ -1,7 +1,7 @@
 
 class CourseServices {
-    getCoursesBySubject(subject) {
-        return subject
+   async getCoursesBySubject(subject) {
+        return await subject
     }
     getCoursesByGenEdCategory(catagory) {
         return catagory

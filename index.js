@@ -40,7 +40,6 @@ process.on('unhandledRejection', (err) => {
 });
 const { Client } = require("pg");
 
-const client = new Client("postgresql://temp:FNukzJzpun9cZ4t734m_qA@vague-mayfly-9420.jxf.gcp-us-east1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full");
 
 (async () => {
   await client.connect();
