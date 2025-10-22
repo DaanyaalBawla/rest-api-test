@@ -38,19 +38,3 @@ process.on('unhandledRejection', (err) => {
     console.log(err);
     process.exit(1);
 });
-const { Client } = require("pg");
-
-
-(async () => {
-  await client.connect();
-  try {
-    const results = await client.query("SELECT NOW()");
-    console.log(results);
-  } catch (err) {
-    console.error("error executing query:", err);
-  } finally {
-    client.end();
-  }
-})();
-
-init();
