@@ -4,11 +4,11 @@
  */
 exports.up = async function(knex) {
     await knex.raw('CREATE SCHEMA IF NOT EXISTS molloyeats;')
-    knex.schema.withSchema('molloyEats').createTable('molloyEats', function (table){
+    knex.schema.withSchema('molloyeats').createTable('molloyfood', function (table){
          table.increments();
          table.string('name');
          table.string('description').setNullable();
-         table.integer('Price').unsigned().notNullable();
+         table.integer('Price').unsigned().notNullable(); 
     });
   
 };
@@ -17,6 +17,8 @@ exports.up = async function(knex) {
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.down = function(knex) {
+exports.down = async function(knex) {
+    return await knex.raw('DROP TABLE molloyeats;')
+
   
 };

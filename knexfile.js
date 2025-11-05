@@ -7,7 +7,7 @@ module.exports = {
 
   development: {
     client: 'cockroachdb',
-    connection: process.env.DATABASE_URL + "&application_name=docs_simplecrud_knex",
+    connection: "postgresql://temp:r-wpXLwtqR90LUzBm4Ka2g@vague-mayfly-9420.jxf.gcp-us-east1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full" + "&application_name=docs_simplecrud_knex",
   },
 
   staging: {
