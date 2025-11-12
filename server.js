@@ -1,6 +1,6 @@
 const { Client } = require("pg");
 
-const client = new Client("postgresql://temp:r-wpXLwtqR90LUzBm4Ka2g@vague-mayfly-9420.jxf.gcp-us-east1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full");
+const client = new Client(process.env.database_url);
 
 (async () => {
   await client.connect();
