@@ -10,8 +10,14 @@ module.exports = [
         path: '/menu/{menu_item}',
         handler: function (request, h) {
         return `${request.params.menu_item}`;
+        },
+        options: {
+        validate: {
+            query: Joi.object({
+                limit: Joi.string()
+            })
         }
-
+    }
     })
 
 ]
