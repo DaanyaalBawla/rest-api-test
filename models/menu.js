@@ -3,7 +3,7 @@ const menu = require('../routes/menu');
 const { description } = require('@hapi/joi/lib/base');
 const knex = require('knexfile.js').devlopment
 Model.knex(knex);
-class Model extends menu {
+class Menu extends Model {
     static get tableName() {
         return 'molloyeats'
     }

@@ -18,6 +18,13 @@ module.exports = [
             })
         }
     }
+    }),
+    server.route({
+        method: 'POST',
+        path: '/menu/add',
+        handler: function (request, h) {
+        return `${request.params.menu_item}`;
+        }
     })
 
 ]
