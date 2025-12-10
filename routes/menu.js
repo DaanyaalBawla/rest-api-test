@@ -24,7 +24,16 @@ module.exports = [
         path: '/menu/add',
         handler: function (request, h) {
         return `${request.params.menu_item}`;
+        },
+        options: {
+        validate: {
+            
+            name: Joi.string().required(),
+            price: Joi.number().required(),
+            description: Joi.string().optional()
+            })
         }
+    }
     })
 
 ]
