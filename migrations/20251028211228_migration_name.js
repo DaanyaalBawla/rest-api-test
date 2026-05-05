@@ -4,11 +4,11 @@
  */
 exports.up = async function(knex) {
     await knex.raw('CREATE SCHEMA IF NOT EXISTS molloyeats;')
-    knex.schema.withSchema('molloyeats').createTable('molloyfood', function (table){
+    return knex.schema.withSchema('molloyeats').createTable('menu', function (table){
          table.increments();
          table.string('name');
-         table.string('description').setNullable();
-         table.integer('Price').unsigned().notNullable(); 
+         table.string('description').nullable();
+         table.numeric('Price').unsigned().nullable(); 
     });
   
 };
@@ -18,7 +18,7 @@ exports.up = async function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = async function(knex) {
-    return await knex.raw('DROP TABLE molloyeats;')
+    return await knex.raw('DROP TABLE molloyeats.menu;')
 
   
 };
