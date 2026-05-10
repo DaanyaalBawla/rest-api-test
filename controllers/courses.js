@@ -9,4 +9,4 @@ class CourseController {
 
     }
 }
-module.exports = new CourseController
+module.exports = new CourseController()

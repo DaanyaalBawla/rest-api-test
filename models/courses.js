@@ -12,4 +12,4 @@ class Courses {
     }
     
 } 
-module.exports = new Courses
+module.exports = new Courses()

@@ -5,4 +5,4 @@ class MenuController {
 
     }
 }
-module.exports = new MenuController
+module.exports = new MenuController()

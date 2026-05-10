@@ -1,8 +1,12 @@
-import { Knex } from "knex"
-import menu from "../routes/menu"
+const Menu = require('../models/menu')
 class MenuServices {
    async getMenu(name="") {
-        return await Knex({m:'menu'}).withSchema('molloyeats')
-    }
+    return await Menu.query()
+        .select('name', 'price', 'description')
+        .where('name',{name})
+        .wherein('name',{name})
+        .whereILike('name',{name})
+
+   }
 }
-module.exports = new CourseServices
+module.exports = new MenuServices()

@@ -12,4 +12,4 @@ class Geneds {
     }
     
 } 
-module.exports = new Geneds
+module.exports = new Geneds()

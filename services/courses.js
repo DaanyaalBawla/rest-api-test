@@ -7,4 +7,4 @@ class CourseServices {
         return catagory
     }
 }
-module.exports = new CourseServices
+module.exports = new CourseServices()
