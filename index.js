@@ -1,5 +1,5 @@
 'use strict';
-
+const env = require('dotenv').config()
 const hapi = require('@hapi/hapi');
 const joi = require('@hapi/joi');
 const path = require('path')
