@@ -3,9 +3,9 @@ class MenuServices {
    async getMenu(name="") {
     return await Menu.query()
         .select('name', 'price', 'description')
-        .where('name',{name})
-        .wherein('name',{name})
-        .whereILike('name',{name})
+        .where('name', `${name}`)
+        .wherein('name',`${name}`)
+        .whereILike('name',`${name}`)
 
    }
 }
